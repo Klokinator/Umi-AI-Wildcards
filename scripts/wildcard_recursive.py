@@ -449,7 +449,8 @@ class SettingsGenerator:
         matches = self.re_setting_tags.findall(prompt)
         if matches:
             for match in matches:
-                for assignment in match.split("+"):
+                sep = "," if "," in match else "|"
+                for assignment in [m.strip() for m in match.split(sep)]:
                     key_raw, value = assignment.split("=")
                     if not value:
                         print(
