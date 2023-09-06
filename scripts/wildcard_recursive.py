@@ -516,6 +516,7 @@ class Script(scripts.Script):
         with gr.Accordion('UmiAI', open=True, elem_id="umiai"):
             with gr.Row():
                 enabled = gr.Checkbox(label="Enable UmiAI", value=True, elem_id="umiai-toggle")
+            with gr.Tab("Settings"):       
                 with gr.Row(elem_id="umiai-seeds"):
                     shared_seed = gr.Checkbox(label="Static wildcards", elem_id="umiai-static-wildcards", 
                                                 value=False, tooltip="Always picks the same random/wildcard options when using a static seed.")
